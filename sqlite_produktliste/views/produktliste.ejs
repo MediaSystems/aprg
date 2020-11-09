@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Produktliste</title>
+    </head>
+    <body>
+        <table border="1">
+            <% for(var i = 0; i < produkte.length; i++) { %>
+                <tr>
+                    <td><%= produkte[i].id %></td>
+                    <td><%= produkte[i].name %></td>
+                    <td><%= produkte[i].preis %></td>
+                    <td>
+                        <form action="/delete/<%=produkte[i].id%>" method="POST">
+                            <button type="submit">Löschen</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/update/<%=produkte[i].id%>" method="POST">
+                            <button type="submit">Bearbeiten</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+
+        <a href="/create">neues Produkt hinzufügen</a>
+    </body>
+</html>

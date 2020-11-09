@@ -1,0 +1,25 @@
+{
+  "name": "sqlite_produktliste",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plass/sqlite_produktliste.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plass/sqlite_produktliste/issues"
+  },
+  "homepage": "https://github.com/plass/sqlite_produktliste#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "sqlite3": "^4.1.1"
+  }
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Produkt bearbeiten</title>
+    </head>
+    <body>
+        <form action="/onupdate/<%=id%>" method="POST">
+            Name des Produkts:<br>
+            <input type="text" name="produktname" value="<%=name%>"><br>
+            <input type="text" name="produktpreis" value="<%=preis%>"><br>
+            <button type="submit">Speichern</button>
+        </form>
+    </body>
+</html>

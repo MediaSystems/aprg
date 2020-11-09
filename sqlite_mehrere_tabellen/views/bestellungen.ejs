@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bestellungen</title>
+    </head>
+    <body>
+        <table border="1">
+            <% for(var i = 0; i < bestellungen.length; i++){ %>
+                <tr>
+                    <td><%= bestellungen[i].anzahl %></td>
+                    <td><%= bestellungen[i].produkt_name %></td>
+                    <td><%= bestellungen[i].kunde_name %></td>
+                    <td><%= bestellungen[i].preis %></td>
+                </tr>
+            <%}%>
+        </table>
+    </body>
+</html>

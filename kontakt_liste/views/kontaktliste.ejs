@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kontaktliste</title>
+    </head>
+    <body>
+        <h1>Liste aller Kontakte</h1>
+        <table border="1">
+            <tr>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th></th>
+            </tr>
+            <% for(var i = 0; i < kontaktliste.length; i++){ %>
+                <tr>
+                    <td><%= kontaktliste[i].vorname %></td>
+                    <td><%= kontaktliste[i].nachname %></td>
+                    <td>
+                        <a href="/zeigekontakt/<%= i%>">Details zeigen...</a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+
+    </body>
+</html>
