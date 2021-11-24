@@ -1,0 +1,42 @@
+<html>	
+	<head> 
+		<title>Bild Hochladen</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+		function initialize(){
+			showExampleImage();
+
+			// Setzt einen Eventhandler für den Button
+			const button = document.getElementById("uploadButton");
+			button.onclick = onUploadButtonClicked;
+
+			function onUploadButtonClicked() {
+				// Lädt das Canvas als PNG zum Server hoch
+				const dataURL = document.getElementById("canvas").toDataURL("image/png");
+
+				// AJAX-Aufruf, verwendet hier jquery
+				$.post('/onupload', {
+					img: dataURL
+				});
+			}
+
+			function showExampleImage(){
+				// Beispielfunktion, die eine rote Kreisscheibe auf das Canvas-Element malt
+				const canvas = document.getElementById('canvas');
+				const ctx = canvas.getContext("2d");
+				ctx.fillStyle = '#FF0000';
+				ctx.beginPath();
+				ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+				ctx.fill();
+			}
+		}
+		</script>
+	</head>
+	<body onload="initialize()">
+		<canvas id="canvas" width="200" height="100"></canvas>
+		<br>
+		<button type="button" id="uploadButton">Bild auf Server speichern (hochladen)</button>
+		<br>
+		<a href="/bildzeigen">Gespeichertes Bild anzeigen</a>
+	</body>
+</html>
